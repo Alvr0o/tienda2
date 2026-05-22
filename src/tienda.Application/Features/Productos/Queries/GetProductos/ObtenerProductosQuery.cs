@@ -1,7 +1,6 @@
 using MediatR;
-using tienda.Domain.Entities;
+using tienda.Application.Features.Productos.Dtos;
 
 namespace tienda.Application.Features.Productos.Queries.GetProductos;
 
-// Le indicamos a MediatR que esta consulta devuelve una lista de Product
-public record ObtenerProductosQuery() : IRequest<IEnumerable<Product>>;
+public record ObtenerProductosQuery() : IRequest<IEnumerable<ProductoDto>>;
