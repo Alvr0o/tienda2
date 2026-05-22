@@ -193,13 +193,15 @@ tienda/
 
 ## Configuración (appsettings.json)
 
+El `appsettings.json` no contiene secretos. El `SecretKey` del JWT se gestiona fuera del repositorio:
+
 ```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Data Source=tienda.db"
   },
   "JwtSettings": {
-    "SecretKey": "MySuper5ecreTKeyFor1iendaProjec7",
+    "SecretKey": "",
     "Issuer": "tienda-api",
     "Audience": "tienda-clients",
     "ExpirationMinutes": 60
@@ -207,7 +209,28 @@ tienda/
 }
 ```
 
-> **Nota de seguridad:** En producción, mover `SecretKey` a variables de entorno o `secrets.json`.
+### Configurar el SecretKey (obligatorio antes de ejecutar)
+
+**Desarrollo — dotnet user-secrets** (recomendado, no se sube al repositorio):
+
+```bash
+dotnet user-secrets init --project src/tienda.WebApi
+dotnet user-secrets set "JwtSettings:SecretKey" "TuClaveSecretaMuyLarga123!" --project src/tienda.WebApi
+```
+
+Los secretos se guardan en `%APPDATA%\Microsoft\UserSecrets\` y .NET los carga automáticamente en modo Development.
+
+**Producción — variable de entorno:**
+
+```bash
+# Linux/macOS
+export JwtSettings__SecretKey="TuClaveSecretaMuyLarga123!"
+
+# Windows PowerShell
+$env:JwtSettings__SecretKey = "TuClaveSecretaMuyLarga123!"
+```
+
+> .NET usa `__` (doble guion bajo) como separador de secciones en variables de entorno.
 
 ---
 
