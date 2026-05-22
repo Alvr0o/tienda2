@@ -1,9 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+using tienda.Application;
+using tienda.Infrastructure;
+using tienda.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// --- NUESTRO PUENTE DE CAPAS ---
+// Registramos los servicios de Application (MediatR, FluentValidation, etc)
+builder.Services.AddApplicationServices();
+// Registramos la Infraestructura (DbContext de SQLite y el Repositorio de Productos)
+builder.Services.AddInfrastructureServices(builder.Configuration);
+// ---------------------------------
 
 var app = builder.Build();
 
@@ -35,6 +49,8 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+app.MapControllers();
 
 app.Run();
 
