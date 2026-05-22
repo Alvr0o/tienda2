@@ -12,6 +12,9 @@ public class AppDbContext : DbContext
     //Tabla de Productos mapeada en la Base de Datos
     public DbSet<Product> Products { get; set; } = null!;
 
+    //Tabla de Usuarios mapeada en la Base de Datos
+    public DbSet<User> Users { get; set; } = null!;
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Esto le dice a EF Core que busque automáticamente todas las configuraciones de Fluent API

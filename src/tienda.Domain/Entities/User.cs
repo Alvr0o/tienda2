@@ -1,6 +1,6 @@
-// Entities/User.cs
 using tienda.Domain.ValueObjects;
 using tienda.Domain.Exceptions;
+using tienda.Domain.Enums;
 
 namespace tienda.Domain.Entities;
 
@@ -9,11 +9,13 @@ public class User : BaseEntity
     public string FirstName { get; private set; } = null!;
     public string LastName { get; private set; } = null!;
     public Email Email { get; private set; } = null!;
+    public string PasswordHash { get; private set; } = null!;
+    public UserRole Role { get; private set; }
     public bool IsActive { get; private set; }
 
     private User() { }
 
-    public static User Create(string firstName, string lastName, Email email)
+    public static User Create(string firstName, string lastName, Email email, string passwordHash, UserRole role = UserRole.Customer)
     {
         if (string.IsNullOrWhiteSpace(firstName))
             throw new DomainException("El nombre es obligatorio.");
@@ -21,11 +23,16 @@ public class User : BaseEntity
         if (string.IsNullOrWhiteSpace(lastName))
             throw new DomainException("El apellido es obligatorio.");
 
+        if (string.IsNullOrWhiteSpace(passwordHash))
+            throw new DomainException("La contraseña es obligatoria.");
+
         return new User
         {
             FirstName = firstName.Trim(),
             LastName = lastName.Trim(),
             Email = email,
+            PasswordHash = passwordHash,
+            Role = role,
             IsActive = true
         };
     }
