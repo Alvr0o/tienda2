@@ -37,3 +37,13 @@ C:\tienda\src\tienda.WebApi\obj\Debug\net8.0\refint\tienda.WebApi.dll
 C:\tienda\src\tienda.WebApi\obj\Debug\net8.0\tienda.WebApi.pdb
 C:\tienda\src\tienda.WebApi\obj\Debug\net8.0\tienda.WebApi.genruntimeconfig.cache
 C:\tienda\src\tienda.WebApi\obj\Debug\net8.0\ref\tienda.WebApi.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\MediatR.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\tienda\src\tienda.WebApi\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\tienda\src\tienda.WebApi\obj\Debug\net8.0\tienda.WebApi.sourcelink.json

@@ -15,3 +15,4 @@ C:\tienda\src\tienda.Infrastructure\obj\Debug\net8.0\tienda.Infrastructure.dll
 C:\tienda\src\tienda.Infrastructure\obj\Debug\net8.0\refint\tienda.Infrastructure.dll
 C:\tienda\src\tienda.Infrastructure\obj\Debug\net8.0\tienda.Infrastructure.pdb
 C:\tienda\src\tienda.Infrastructure\obj\Debug\net8.0\ref\tienda.Infrastructure.dll
+C:\tienda\src\tienda.Infrastructure\obj\Debug\net8.0\tienda.Infrastructure.sourcelink.json
