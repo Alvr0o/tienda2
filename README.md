@@ -191,24 +191,6 @@ tienda/
 
 ---
 
-## Configuración (appsettings.json)
-
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=tienda.db"
-  },
-  "JwtSettings": {
-    "SecretKey": "MySuper5ecreTKeyFor1iendaProjec7",
-    "Issuer": "tienda-api",
-    "Audience": "tienda-clients",
-    "ExpirationMinutes": 60
-  }
-}
-```
-
----
-
 ## Recrear la migración (si es necesario)
 
 ```bash
